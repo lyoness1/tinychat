@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-xs-6 pull-left">
+        <h4>Welcome, {{ name }}!</h4>
+    </div>
+    <div class="col-xs-6 pull-right">
+        <a href="/" class="pull-right">Leave this room</a>
+    </div>
+</div>
+
+<!-- Chat -->
+<div class="row">
+    <div class="col-lg-12">
+
+        <!-- Chat panel -->
+        <div class="panel panel-primary">
+
+            <!-- Message Input -->
+            <div class="input-group">
+                <input type="text" class="form-control" id="message-input" placeholder="Type message...">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit" id="send">Send</button>
+                </span>
+            </div>          
+
+            <!-- Chat -->
+            <div class="panel-body" id="main-chat">
+
+                <!-- Chat content goes here -->
+            
+            </div><!-- /panel body -->
+
+        </div><!-- /chat panel -->
+    </div><!-- /col -->
+</div><!-- /row -->
+
+<!-- Load script here so home page doesn't trigger socket connection -->
+<script src="/static/app.js" type="text/javascript"></script>
+
+{% endblock %}
