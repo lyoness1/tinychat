@@ -2,8 +2,8 @@
 
 ## ROUTES
 ------
-*USER opens landing page /index.html
-*SERVER prompts user for name
+* USER opens landing page /index.html
+* SERVER prompts user for name
     Case 1: USER submits name as a valid (at least one letter) string.
             SERVER routes user to /chat.html, passing: 
                 {'name': <string>}
