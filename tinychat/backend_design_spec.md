@@ -7,10 +7,12 @@
 
 - SERVER prompts user for name
 
-⋅⋅⋅Case 1: USER submits name as a valid (at least one letter) string.
+    Case 1: USER submits name as a valid (at least one letter) string.
             SERVER routes user to /chat.html, passing: 
-                ` {'name': <string>} `
-⋅⋅⋅Case 2: user doesn't submit name and landing page reloads
+                ```Javascript
+                {'name': <string>}
+                ```
+    Case 2: user doesn't submit name and landing page reloads
 
 
 ## EVENTS
