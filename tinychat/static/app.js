@@ -23,20 +23,27 @@ $(document).ready(function(){
 
     // Trigger leave event before disconnecting socket upon window unload
     $(window).bind("beforeunload", function() {
-        console.log("beforeunload triggered");
         socket.emit('left', {})
         socket.disconnect();
     });
 
     // Call joined event on server when the connection to socket is made
     socket.on('connect', function() {
-        console.log("socket connected, joined event triggered");
         socket.emit('joined', {});
     });
 
+    // Creates a status html element block
+    function createStatus (data) {
+        var $update = $("<div></div>", {"class": "col-xs-12"});
+        var $status = $("<p></p>", {"class": "status"}).html(data.msg);
+        $update.append($status);
+        return $update;
+    };
+
     // Broadcasts status message to room when user joins or exits
     socket.on('status', function (data) {
-        $('#main-chat').prepend('<br>' + data.msg);
+        var $update = createStatus(data);
+        $('#main-chat').prepend($update);
     });
 
     // Broadcasts message to room 
@@ -64,9 +71,8 @@ $(document).ready(function(){
     function getMessage() {
         text = $('#message-input').val();
         $('#message-input').val('');
-        console.log("text event triggered");
         socket.emit('text', {'msg': text});
-    }
+    };
 
     // Called getMessage on enter keyup
     $("#message-input").keyup(function (evt) {

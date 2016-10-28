@@ -1,7 +1,6 @@
 /* Stub CSS file for your tinychat app! */
-.avitar {
-    height: 48px;
-    width: 48px;
+.status {
+    font-style: italic;
 }
 
 .panel-body
