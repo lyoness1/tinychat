@@ -62,7 +62,7 @@ def text(message):
     """Sent by clients and broadcast to all people in the room upon message."""
 
     name = session.get('name')
-    stamp = datetime.datetime.now().strftime('%-H:%M , %A')
+    stamp = datetime.datetime.now().strftime('%-I:%M %p, %A')
     msg = message['msg']
     
     emit('message', {"msg": msg, "name": name, "stamp": stamp}, broadcast=True)

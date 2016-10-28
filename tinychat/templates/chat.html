@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div hidden id="user" data-user="{{ name }}"></div>
+
 <div class="row">
     <div class="col-xs-6 pull-left">
         <h4>Welcome, {{ name }}!</h4>
     </div>
     <div class="col-xs-6 pull-right">
-        <a href="/" class="pull-right">Leave this room</a>
+        <a href="/" class="pull-right leave">Leave room</a>
     </div>
 </div>
 
 <!-- Chat -->
-<div class="row">
+<div class="row chat-container">
     <div class="col-lg-12">
 
         <!-- Chat panel -->
@@ -19,15 +21,51 @@
 
             <!-- Message Input -->
             <div class="input-group">
-                <input type="text" class="form-control" id="message-input" placeholder="Type message...">
+                <input type="text" class="form-control sharp" id="message-input" placeholder="Type message...">
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit" id="send">Send</button>
+                    <button class="btn btn-primary sharp" type="submit" id="send">Send</button>
                 </span>
             </div>          
 
             <!-- Chat -->
             <div class="panel-body" id="main-chat">
                
+                <!-- Example -->
+                <!-- ::Before -->
+                <div class="row message-data">
+                    <!-- ::Before -->
+                    <div class="col-xs-12 message-data-header">
+                        <h5 class="mine">Name <i class="fa fa-circle"></i></h5>
+                        <h6 class="mine">Time</h6>
+                    </div>
+                    <div class="col-xs-8 message-data-content my-message pull-right">
+                        <p class="">My Message</p>
+                    </div>
+                    <!-- ::After -->
+                </div>
+
+                <div class="status">
+                    <p class="update">So and So has entered the room</p>
+                </div>
+                <!-- ::After -->
+
+                <!-- ::Before -->
+                <div class="row message-data">
+                    <!-- ::Before -->
+                    <div class="col-xs-12 message-data-header">
+                        <h5><i class="fa fa-circle"></i> Name</h5>
+                        <h6>Time</h6>
+                    </div>
+                    <div class="col-xs-8 message-data-content">
+                        <p>Other Message</p>
+                    </div>
+                    <!-- ::After -->
+                </div>
+
+                <div class="status">
+                    <p class="update">So and so has left the room</p>
+                </div>
+                <!-- ::After -->
                 <!-- Chat content goes here -->
             
             </div><!-- /panel body -->
