@@ -1,1 +1,13 @@
-Here is where your spec/explanation to the tinychat backend developer goes.
+# tinychat backend developer spec.
+
+## ROUTES
+------
+*USER opens landing page /index.html
+*SERVER prompts user for name
+    Case 1: USER submits name as a valid (at least one letter) string.
+            SERVER routes user to /chat.html, passing: 
+                {'name': <string>}
+    Case 2: user doesn't submit name and landing page reloads
+
+## EVENTS
+------
