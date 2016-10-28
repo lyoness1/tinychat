@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, request, session, url_for
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_debugtoolbar import DebugToolbarExtension
 
+import datetime
+
 # Initialize app
 app = Flask(__name__)
 
@@ -59,8 +61,11 @@ def joined(message):
 def text(message):
     """Sent by clients and broadcast to all people in the room upon message."""
 
-    # Receive msg from getMessage(), compiled, and emitted to 'message'
-    emit('message', {'msg': session.get('name') + ':' + message['msg']}, broadcast=True)
+    name = session.get('name')
+    stamp = datetime.datetime.now().strftime('%-H:%M , %A')
+    msg = message['msg']
+    
+    emit('message', {"msg": msg, "name": name, "stamp": stamp}, broadcast=True)
 
 
 @socketio.on('left', namespace='/chat')

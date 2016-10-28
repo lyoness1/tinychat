@@ -41,7 +41,23 @@ $(document).ready(function(){
 
     // Broadcasts message to room 
     socket.on('message', function (data) {
-        $('#main-chat').prepend('<br>' + data.msg);
+        console.log(data)
+        var $chatRow = $("<div></div>", {"class": "row"});
+
+        var $chatHeader = $("<div></div>", {"class": "col-xs-12"});
+        var $chatHeaderName = $("<h5></h5>").html(data.name);
+        var $chatHeaderStamp = $("<h6></h6>").html(data.stamp);
+        $chatHeader.append($chatHeaderName);
+        $chatHeader.append($chatHeaderStamp);
+
+        var $chatMessage = $("<div></div>", {"class": "col-xs-8"});
+        var $message = $("<p></p>").html(data.msg);
+        $chatMessage.append($message);
+
+        $chatRow.append($chatHeader);
+        $chatRow.append($chatMessage)
+
+        $('#main-chat').prepend($chatRow);
     });
 
     // Grabs text from message box, empties the box, calls text event on server
@@ -49,7 +65,7 @@ $(document).ready(function(){
         text = $('#message-input').val();
         $('#message-input').val('');
         console.log("text event triggered");
-        socket.emit('text', {msg: text});
+        socket.emit('text', {'msg': text});
     }
 
     // Called getMessage on enter keyup
