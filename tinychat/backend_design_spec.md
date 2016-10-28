@@ -4,9 +4,9 @@
 ------
 * USER opens landing page /index.html
 * SERVER prompts user for name
-    Case 1: USER submits name as a valid (at least one letter) string.
+..1. Case 1: USER submits name as a valid (at least one letter) string.
             SERVER routes user to /chat.html, passing: 
-                {'name': <string>}
+                ` {'name': <string>} `
     Case 2: user doesn't submit name and landing page reloads
 
 ## EVENTS
