@@ -31,19 +31,15 @@ The app should work in all modern browsers.
 
         +-- chat.html
 
-+-- frontend_design_spec.md
+    +-- frontend_design_spec.md
 
+    +-- backend_design_spec.md
 
-+-- backend_design_spec.md
+    +-- README.md
 
+    +-- requirements.txt
 
-+-- README.md
-
-
-+-- requirements.txt
-
-
-+-- server.py
+    +-- server.py
 
 
 
