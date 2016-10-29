@@ -15,19 +15,31 @@ The app should work in all modern browsers.
 ## What files live where
 
 .
-+-- env/
+
 +-- node_modules/
+
 +-- static/
+
 |   +-- app.js
+
 |   +-- style.css
+
 +-- templates
+
 |   +-- index.html
+
 |   +-- chat.html
+
 +-- frontend_design_spec.md
+
 +-- backend_design_spec.md
+
 +-- README.md
+
 +-- requirements.txt
+
 +-- server.py
+
 
 * `env/` contains libraries used.
 * `node_modules/` contains frameworks for socket.io.
@@ -49,6 +61,7 @@ The app should work in all modern browsers.
 2. Type the following lines of code in the terminal: 
 
 ```
+$ virtualenv env
 $ source env/bin/activate
 $ pip install -r requirements.txt
 $ python server.py
