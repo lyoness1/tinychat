@@ -23,19 +23,19 @@ The app should work in all modern browsers.
 +-- static/
 
 
-|     +-- app.js
+    +-- app.js
 
 
-|     +-- style.css
+    +-- style.css
 
 
 +-- templates
 
 
-|     +-- index.html
+    +-- index.html
 
 
-|     +-- chat.html
+    +-- chat.html
 
 
 +-- frontend_design_spec.md
