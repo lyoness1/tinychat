@@ -1,49 +1,73 @@
 # README
 
-Hello!
 
-As the next step in the AeroFS recruiting process, we'd like you to do a
-take-home development exercise. This exercise should take no longer than a
-couple hours for the basic requirements.
+Hello! Welcome to tinychat. 
 
-Please send us back your results within the next two weeks--if you've got
-travel or something else coming up and this timetable doesn't work for you,
-just let us know and we'll push that back further.
 
-Good luck, and we hope you have fun with this!
+This is a simple, one page chat application. It uses FlaskIO and Flask to run the server and backend socket connection, and SocketIO on the frontend for the client socket connection. 
+
+
+Any number of users can enter the chat room. Each user can enter their name of choice before entering the room. Each person can see their own chats right-aligned and in green, and all others' chat messages left-aligned in blue. Each message contains a timestamp of the time and day the message was created. Each time a new user enters the room, or an existing user exits the room, a status message is broadcast to the entire room. A user can leave the room at any time by clicking on the logo or the link to exit the room. 
+
+The app should work in all modern browsers. 
+
 
 ## What files live where
 
+.
++-- env/
++-- node_modules/
++-- static/
+|   +-- app.js
+|   +-- style.css
++-- templates
+|   +-- index.html
+|   +-- chat.html
++-- frontend_design_spec.md
++-- backend_design_spec.md
++-- README.md
++-- requirements.txt
++-- server.py
+
+* `env/` contains libraries used.
+* `node_modules/` contains frameworks for socket.io.
+* `app.js` is the main javascript file.
+* `style.css` is the main css file.
+* `index.html` is the landing page. 
+* `chat.html` is the page with the chat box
 * `frontend_design_spec.md` has a copy of the information/requirements for this
   exercise.
-* `backend_design_spec.md` should contain the spec for what you want the
-  backend developer to build so that your frontend demo app would actually work
-  someday. Once you have your app more or less working, you'll need to write
-  this.
-* `index.html` is your main HTML page. 
-* Your JS code goes in `/j`s. There's an app.js file in there already to get
-  you started. Any libraries you use as dependencies can go in `/libs` (if not
-  linked via a CDN). Your index.html file already includes Twitter Bootstrap
-  and JQuery, to start.
-* Your stylesheets go in `/style`s. There's a `style.cs`s file in there already
-  to get you started. If you'd like to use a CSS preprocessor like SCSS or
-  LESS, great! Make sure to include the original SCSS/LESS file(s), not just
-  compiled CSS, when you send your code back so we can see them.
-* `/fixtures` contains a fake data file, `fakedata.json`, to help you get
-  started.
+* `backend_design_spec.md` contains the spec for what the FE developer might write to the
+  backend developer. 
+* `server.py` runs the app. 
 
-If you'd rather organize your code differently, go for it. Just update this
-README file accordingly.
 
-## Viewing the app for development
+## Running the App
 
-If your computer has Python installed, an easy way to get this frontend-only
-app up and running is to cd into this directory in your terminal window, then
-run:
+1. Clone this repository into it's own directory. Change directory into this root folder, tinychat/. 
 
-    python -m SimpleHTTPServer 8080
+2. Type the following lines of code in the terminal: 
 
-This will start a basic web server serving the contents of this directory on
-your machine. You can then see index.html at localhost:8080.
+```
+$ source env/bin/activate
+$ pip install -r requirements.txt
+$ python server.py
+```
 
-If you'd rather serve your app for development in a different way, go for it.
+3. Navigate to `http://127.0.0.1:5000/` in your browser of choice, enter your name, and start chatting! 
+
+
+NOTE: Because the app is not hosted online, in order to have multiple users engaged simultaneously in the chat, multiple tabs/windows/browsers may be used. 
+
+
+## Version 2.0
+
+I chose to omit previous messages from the view of incoming new members. All messages submitted and received are rendered dynamically in the DOM and will be lost upon leaving the room. In a future version, I would create a database to store old message by user. Users could login with a unique name and id (email) where they could have access to old message that would load when the chat page was rendered. 
+
+I would add a side bar indicating all of the members currently in the chat room. 
+
+I would allow users to chose an avitar on the homepage where they enter their name. This avitar would be displayed next to their sent messages, and others' avitars would be displayed next to their. 
+
+I would add skins from which the user could chose by linking multiple css files. 
+
+
