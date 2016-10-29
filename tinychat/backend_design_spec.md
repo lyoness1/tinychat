@@ -6,14 +6,14 @@ The client is running an instance of SocketIO for frequency, open, bi-directiona
 
 ## ROUTES
 
-- "/"
+- "/" - GET
 
     USER opens landing page, index.html. CLIENT prompts user for name. 
 
 
-- "/chat"
+- "/chat" - POST
 
-    Case 1: USER submits name as a valid (at least one letter) string as form data with the tag <name="name">. SERVER routes user to /chat.html, passing: `{'name': <string>} to CLIENT`
+    Case 1: USER submits name as a valid (at least one letter) string as form data with the tag name="name". SERVER routes user to /chat.html, passing: `{'name': <string>} to CLIENT`
 
     Case 2: USER doesn't submit name and SERVER reloads landing page.
 
