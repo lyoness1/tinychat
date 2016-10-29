@@ -43,7 +43,6 @@ The app should work in all modern browsers.
 
 
 
-* `env/` contains libraries used.
 * `node_modules/` contains frameworks for socket.io.
 * `app.js` is the main javascript file.
 * `style.css` is the main css file.
@@ -62,12 +61,12 @@ The app should work in all modern browsers.
 
 2. Type the following lines of code in the terminal: 
 
-```
-$ virtualenv env
-$ source env/bin/activate
-$ pip install -r requirements.txt
-$ python server.py
-```
+    ```
+    $ virtualenv env
+    $ source env/bin/activate
+    $ pip install -r requirements.txt
+    $ python server.py
+    ```
 
 3. Navigate to `http://127.0.0.1:5000/` in your browser of choice, enter your name, and start chatting! 
 
@@ -81,7 +80,7 @@ I chose to omit previous messages from the view of incoming new members. All mes
 
 I would add a side bar indicating all of the members currently in the chat room. 
 
-I would allow users to chose an avitar on the homepage where they enter their name. This avitar would be displayed next to their sent messages, and others' avitars would be displayed next to their. 
+I would allow users to chose an avitar on the homepage where they enter their name. This avitar would be displayed next to their sent messages, and others' avitars would be displayed next to theirs. 
 
 I would add skins from which the user could chose by linking multiple css files. 
 
