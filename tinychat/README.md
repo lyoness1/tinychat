@@ -19,24 +19,17 @@ The app should work in all modern browsers.
 
     +-- node_modules/
 
-
     +-- static/
-
 
         +-- app.js
 
-
         +-- style.css
-
 
     +-- templates
 
-
         +-- index.html
 
-
         +-- chat.html
-
 
 +-- frontend_design_spec.md
 
