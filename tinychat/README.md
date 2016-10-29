@@ -16,29 +16,42 @@ The app should work in all modern browsers.
 
 .
 
+
 +-- node_modules/
+
 
 +-- static/
 
+
 |   +-- app.js
+
 
 |   +-- style.css
 
+
 +-- templates
+
 
 |   +-- index.html
 
+
 |   +-- chat.html
+
 
 +-- frontend_design_spec.md
 
+
 +-- backend_design_spec.md
+
 
 +-- README.md
 
+
 +-- requirements.txt
 
+
 +-- server.py
+
 
 
 * `env/` contains libraries used.
