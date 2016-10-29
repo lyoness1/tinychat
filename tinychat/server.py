@@ -52,7 +52,7 @@ def joined(message):
     """Sent by clients and broadcast to all people in the room upon enter."""
     
     name = session.get('name')
-    print "Join event triggered by ", name
+
     # Receive msg from 'connect', creates response, and emits to 'status'
     emit('status', {'msg': name + ' has entered the room.'},  broadcast=True)
 
@@ -73,7 +73,7 @@ def left(message):
     """Sent by clients and broadcast to all people in the room upon exit."""
 
     name = session.get('name')
-    print "left event triggered by", name
+
     # Emits broadcase of person leaving chat
     emit('status', {'msg': name + ' has left the room.'}, broadcast=True)
 
