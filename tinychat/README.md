@@ -14,28 +14,28 @@ The app should work in all modern browsers.
 
 ## What files live where
 
-.
+    .
 
 
-+-- node_modules/
+    +-- node_modules/
 
 
-+-- static/
+    +-- static/
 
 
-    +-- app.js
+        +-- app.js
 
 
-    +-- style.css
+        +-- style.css
 
 
-+-- templates
+    +-- templates
 
 
-    +-- index.html
+        +-- index.html
 
 
-    +-- chat.html
+        +-- chat.html
 
 
 +-- frontend_design_spec.md
